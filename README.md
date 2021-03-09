@@ -51,4 +51,39 @@ export const testSchema = {
   },
 };
 ```
+
+This example only uses basic types (strings and numbers) but Zod lets you express more complex validation rules, such as whether a string contains a date, a URL, or an email address.
+
+A complete Koa-based server for this schema can be implemented with the following code snippet:
+
+```typescript
+import Koa from "koa";
+import Router from "koa-router";
+import { Server } from "net";
+import { createKoaRoute } from "solidRpc/koaAdapter"
+import { ApiHttpError } from "solidRpc/types"
+import { testSchema } from "./testSchema"
+
+const createServer = (port: number): Server => {
+  const koa = new Koa();
+  const apiRouter = new Router({
+    prefix: pathPrefix,
+  });
+
+  createKoaRoute(apiRouter, testSchema, "divide", async ({ num1, num2 }) => {
+    if (num2 === 0) {
+      throw new ApiHttpError("Can't divide by 0", 400);
+    }
+    return num1 / num2;
+  });
+
+  createKoaRoute(apiRouter, testSchema, "sayHi", async ({ name }) => {
+    return "Hi " + name;
+  });
+
+  koa.use(apiRouter.allowedMethods());
+  koa.use(apiRouter.routes());
+  return koa.listen(port);
+};
+```
 <img width="1036" alt="Screen Shot 2021-03-09 at 11 42 55 AM" src="https://user-images.githubusercontent.com/12111/110551046-a510a980-80e9-11eb-9d3c-6b24fdc3e086.png">
