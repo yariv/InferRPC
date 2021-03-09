@@ -117,8 +117,10 @@ const testClient = async () => {
 
 The following screenshots show the benefits of SolidRPC's static type checking.
 
-- Your editor can help you auto-complete the valid method and parameter names:
+- Your editor can help you auto-complete the valid method names:
 <img width="710" alt="Screen Shot 2021-03-09 at 3 43 25 PM" src="https://user-images.githubusercontent.com/12111/110553720-4568cd00-80ee-11eb-9556-3f3ec78d9cdf.png">
+
+- Auto-complete also works for parameters:
 <img width="801" alt="Screen Shot 2021-03-09 at 3 44 28 PM" src="https://user-images.githubusercontent.com/12111/110553795-67624f80-80ee-11eb-8663-03fb14ac5bd4.png">
 
 - If you enter a wrong method name, you get an error:
