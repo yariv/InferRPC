@@ -87,6 +87,23 @@ const createServer = (port: number): Server => {
 };
 ```
 
+NextJS is also supported. This snipped shows to implement a NextJS API handler:
+```typescript
+import { createNextHandler } from "solidRpc/nextAdapter"
+
+export default createNextHandler(
+      testSchema,
+      "divide",
+      async ({ num1, num2 }) => {
+        if (num2 === 0) {
+          throw new ApiHttpError("Can't divide by 0", 400);
+        }
+        return num1 / num2;
+      }
+    );
+  });
+```
+
 Below are a few screenshots from VSCode highlighting the benefits how SolidRPC leverages TypeScript's type checking.
 
 - Your editor's auto-complete feature can help you choose a valid method name:
