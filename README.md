@@ -98,13 +98,11 @@ Below are a few screenshots from VSCode highlighting the benefits how SolidRPC l
 <img width="784" alt="Screen Shot 2021-03-09 at 11 32 40 AM" src="https://user-images.githubusercontent.com/12111/110553048-36354f80-80ed-11eb-9074-7363fb8842fb.png">
 
 - If you try to add an invalid parameter name, you get an error:
-<img width="634" alt="Screen Shot 2021-03-09 at 11 34 06 AM" src="https://user-images.githubusercontent.com/12111/110553079-4816f280-80ed-11eb-95b5-39337b338dfc.png">
+<img width="696" alt="Screen Shot 2021-03-09 at 11 33 21 AM" src="https://user-images.githubusercontent.com/12111/110553289-a47a1200-80ed-11eb-81b4-c4bbce83f83c.png">
+
 
 - If your method returns an invalid response type, you get an error:
 
 <img width="634" alt="Screen Shot 2021-03-09 at 11 34 06 AM" src="https://user-images.githubusercontent.com/12111/110553222-82808f80-80ed-11eb-9fd1-b0a7e384e001.png">
 
 
-
-
-<img width="1036" alt="Screen Shot 2021-03-09 at 11 42 55 AM" src="https://user-images.githubusercontent.com/12111/110551046-a510a980-80e9-11eb-9d3c-6b24fdc3e086.png">
