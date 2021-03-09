@@ -10,9 +10,24 @@ SolidRPC is a TypeScript library that facilitates writing API clients and server
 
 SolidRPC uses [Zod](https://github.com/colinhacks/zod) for describing request/response schemas and for validating payloads.
 
-# Example
+# Usage
 
-TypedApi Schemas are described as objects containing a list of methods, each of which has a request and a response type. Both request and response types are Zod types. The schema below describes a service with 2 methods:
+To implement an API client and/or server using SolidRPC, you typically start by implementing a static data structure describing the schema. SolidRPC uses type inference to infer the request/response types from this data structured.
+
+SolidRPC schemas are TypeScript dictionaries mapping method names to request and response schema.
+
+In TypeScript, a schema is a data structure that adheres to the following type signature:
+
+```typescript
+import * as z from "zod";
+
+type AbstractSchemaType = Record<
+  string,
+  { req: z.ZodType<any>; res: z.ZodType<any> }
+>;
+```
+
+Here's an example schema with 2 methods:
 
 1.  `sayHi`, which takes a `name` parameter and returns a string.
 2.  `divide`, which takes two numbers and returns the result of dividing num1 by num2.
