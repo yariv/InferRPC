@@ -106,3 +106,41 @@ Below are a few screenshots from VSCode highlighting the benefits how SolidRPC l
 <img width="634" alt="Screen Shot 2021-03-09 at 11 34 06 AM" src="https://user-images.githubusercontent.com/12111/110553222-82808f80-80ed-11eb-9fd1-b0a7e384e001.png">
 
 
+Implementing a client that adheres to the schema is easy. Here's an example:
+```
+const testClient = async () => {
+  const client = new TypedHttpClient("http://localhost:3001/api", testSchema);
+  const result = await client.call("divide", { num1: 10, num2: 2 });
+  console.log(result);
+};
+```
+
+The following screenshots show the benefits of SolidRPC's static type checking.
+
+- Your editor can help you auto-complete the valid method and parameter names:
+<img width="710" alt="Screen Shot 2021-03-09 at 3 43 25 PM" src="https://user-images.githubusercontent.com/12111/110553720-4568cd00-80ee-11eb-9556-3f3ec78d9cdf.png">
+<img width="801" alt="Screen Shot 2021-03-09 at 3 44 28 PM" src="https://user-images.githubusercontent.com/12111/110553795-67624f80-80ee-11eb-8663-03fb14ac5bd4.png">
+
+- If you enter a wrong method name, you get an error:
+
+<img width="780" alt="Screen Shot 2021-03-09 at 3 46 38 PM" src="https://user-images.githubusercontent.com/12111/110553932-ac868180-80ee-11eb-862c-fd3e3970da91.png">
+
+- If you enter a wrong parameter name, you get an error:
+
+<img width="1037" alt="Screen Shot 2021-03-09 at 3 45 42 PM" src="https://user-images.githubusercontent.com/12111/110553867-8eb91c80-80ee-11eb-9f45-3f195fa01083.png">
+
+- If you enter a wrong parameter type, you get an error:
+<img width="645" alt="Screen Shot 2021-03-09 at 3 47 19 PM" src="https://user-images.githubusercontent.com/12111/110553986-c758f600-80ee-11eb-8158-70a07e66e5dc.png">
+
+- The response type is checked as well:
+
+<img width="640" alt="Screen Shot 2021-03-09 at 3 48 52 PM" src="https://user-images.githubusercontent.com/12111/110554088-fd967580-80ee-11eb-9266-53f735aaae80.png">
+
+
+
+
+
+
+
+
+
