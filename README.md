@@ -104,7 +104,7 @@ export default createNextHandler(
   });
 ```
 
-Below are a few screenshots from VSCode highlighting the benefits how SolidRPC leverages TypeScript's type checking.
+Below are a few screenshots from VSCode highlighting the benefits of how SolidRPC leverages TypeScript's type checking.
 
 - Your editor's auto-complete feature can help you choose a valid method name:
 
