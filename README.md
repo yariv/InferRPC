@@ -1,4 +1,3 @@
-<img width="842" alt="Screen Shot 2021-03-09 at 5 02 01 PM" src="https://user-images.githubusercontent.com/12111/110559944-fa54b700-80f9-11eb-8dff-bec72c310378.png">
 # SolidRPC Introduction
 
 SolidRPC is a TypeScript library that facilitates writing API clients and servers that communicate by a protocol described by a shared schema. SolidRPC provides the following benefits:
