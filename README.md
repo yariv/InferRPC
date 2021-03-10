@@ -1,3 +1,4 @@
+<img width="842" alt="Screen Shot 2021-03-09 at 5 02 01 PM" src="https://user-images.githubusercontent.com/12111/110559944-fa54b700-80f9-11eb-8dff-bec72c310378.png">
 # SolidRPC Introduction
 
 SolidRPC is a TypeScript library that facilitates writing API clients and servers that communicate by a protocol described by a shared schema. SolidRPC provides the following benefits:
@@ -142,19 +143,20 @@ The following screenshots show the benefits of SolidRPC's static type checking.
 <img width="801" alt="Screen Shot 2021-03-09 at 3 44 28 PM" src="https://user-images.githubusercontent.com/12111/110553795-67624f80-80ee-11eb-8663-03fb14ac5bd4.png">
 
 - If you enter a wrong method name, you get an error:
-
-<img width="780" alt="Screen Shot 2021-03-09 at 3 46 38 PM" src="https://user-images.githubusercontent.com/12111/110553932-ac868180-80ee-11eb-862c-fd3e3970da91.png">
+<img width="842" alt="Screen Shot 2021-03-09 at 5 02 01 PM" src="https://user-images.githubusercontent.com/12111/110559962-017bc500-80fa-11eb-9b88-9c07561e5803.png">
 
 - If you enter a wrong parameter name, you get an error:
 
-<img width="1037" alt="Screen Shot 2021-03-09 at 3 45 42 PM" src="https://user-images.githubusercontent.com/12111/110553867-8eb91c80-80ee-11eb-9f45-3f195fa01083.png">
+<img width="831" alt="Screen Shot 2021-03-09 at 5 02 30 PM" src="https://user-images.githubusercontent.com/12111/110559994-0e98b400-80fa-11eb-80f3-10796f9272e5.png">
+
 
 - If you enter a wrong parameter type, you get an error:
-<img width="645" alt="Screen Shot 2021-03-09 at 3 47 19 PM" src="https://user-images.githubusercontent.com/12111/110553986-c758f600-80ee-11eb-8158-70a07e66e5dc.png">
+<img width="844" alt="Screen Shot 2021-03-09 at 5 03 05 PM" src="https://user-images.githubusercontent.com/12111/110560010-15bfc200-80fa-11eb-9cc4-bc5c9d41f99f.png">
+
 
 - The response type is checked as well:
+<img width="783" alt="Screen Shot 2021-03-09 at 5 09 00 PM" src="https://user-images.githubusercontent.com/12111/110560058-2cfeaf80-80fa-11eb-89e2-5e40919e8104.png">
 
-<img width="640" alt="Screen Shot 2021-03-09 at 3 48 52 PM" src="https://user-images.githubusercontent.com/12111/110554088-fd967580-80ee-11eb-9266-53f735aaae80.png">
 
 
 
