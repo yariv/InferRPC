@@ -1,9 +1,8 @@
 import * as z from "zod";
-import { ZodError } from "zod";
 
-export type WsSchema = Record<string, z.ZodType<any>>;
+export type PeerSchema = Record<string, z.ZodType<any>>;
 
-export type WsHandlerType<IncomingSchemaType extends WsSchema> = (
+export type PeerHandlerType<IncomingSchemaType extends PeerSchema> = (
   msgType: keyof IncomingSchemaType,
   msg: z.infer<IncomingSchemaType[typeof msgType]>
 ) => Promise<void>;
@@ -13,17 +12,18 @@ const genericMsgSchema = z.object({
   params: z.any(),
 });
 
-export interface BiDirectionalListener {
+export interface PeerListener {
   onParseError(error: Error): void;
   onMissingHandler(msgType: string): void;
 }
-export class BiDirectional<
-  IncomingSchemaType extends WsSchema,
-  OutgoingSchemaType extends WsSchema
+
+export class Peer<
+  IncomingSchemaType extends PeerSchema,
+  OutgoingSchemaType extends PeerSchema
 > {
   incomingSchema: IncomingSchemaType;
   outgoingSchema: OutgoingSchemaType;
-  listener: BiDirectionalListener;
+  listener: PeerListener;
 
   handlers: Record<
     keyof IncomingSchemaType,
@@ -36,7 +36,7 @@ export class BiDirectional<
     // This parameter is only used for enforcing the right type
     // definition for OutgoingSchemaType
     outgoingSchema: OutgoingSchemaType,
-    listener: BiDirectionalListener
+    listener: PeerListener
   ) {
     this.incomingSchema = incomingSchema;
     this.outgoingSchema = outgoingSchema;

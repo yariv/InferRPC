@@ -1,5 +1,5 @@
 import * as z from "zod";
-import { BiDirectional, BiDirectionalListener } from "../src/bidirectional";
+import { Peer, PeerListener } from "../src/bidirectional";
 
 const schema1 = {
   divide: z.object({
@@ -18,7 +18,7 @@ const schema2 = {
 
 describe("bidirectional test", () => {
   it("works", async () => {
-    const listener: BiDirectionalListener = {
+    const listener: PeerListener = {
       onMissingHandler: (msgType) => {
         console.error("missing handler", msgType);
       },
@@ -26,8 +26,8 @@ describe("bidirectional test", () => {
         console.error("parse error", error);
       },
     };
-    const peer1 = new BiDirectional(schema1, schema2, listener);
-    const peer2 = new BiDirectional(schema2, schema1, listener);
+    const peer1 = new Peer(schema1, schema2, listener);
+    const peer2 = new Peer(schema2, schema1, listener);
 
     peer1.setHandler("divide", async ({ num1, num2 }) => {
       peer2.onMessage(peer1.serialize("divideResult", num1 / num2));
