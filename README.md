@@ -156,6 +156,9 @@ The following screenshots show the benefits of InferRPC's static type checking.
 - The response type is checked as well:
 <img width="783" alt="Screen Shot 2021-03-09 at 5 09 00 PM" src="https://user-images.githubusercontent.com/12111/110560058-2cfeaf80-80fa-11eb-89e2-5e40919e8104.png">
 
+- If the client sends an invalid request to the server, the server will return a Zod validation error, as shown in this snippet (note that Zod lets you customize error messages if you want them to be more user friendly):
+<img width="510" alt="Screen Shot 2021-03-09 at 5 26 58 PM" src="https://user-images.githubusercontent.com/12111/110713244-714f8580-81b6-11eb-9ffb-3f5ce0cc77f5.png">
+
 
 # Peer-to-Peer Protocols
 
