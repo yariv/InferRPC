@@ -226,3 +226,33 @@ peer1.onMessage(peer2.serialize("divide", { num1: 10, num2: 5 }));
 peer1.onMessage(peer2.serialize("sayHi", { name: "Sarah" }));
 ```
 
+Just as with the client/server examples above, InferRPC ensures types as statically checked and your IDE can auto-complete valid values for you.
+
+Handler names are auto-completed:
+<img width="580" alt="Screen Shot 2021-03-10 at 3 28 30 PM" src="https://user-images.githubusercontent.com/12111/110711983-49abed80-81b5-11eb-8bd7-837d8a3d1434.png">
+
+So are handler parameters:
+<img width="596" alt="Screen Shot 2021-03-10 at 3 25 23 PM" src="https://user-images.githubusercontent.com/12111/110712082-76600500-81b5-11eb-9fa2-c38540df4a9d.png">
+
+Invalid handler parameters cause compilation errors:
+<img width="613" alt="Screen Shot 2021-03-10 at 3 25 43 PM" src="https://user-images.githubusercontent.com/12111/110712114-88da3e80-81b5-11eb-9ce3-57563521e736.png">
+
+The same features work for serializing messages before they are sent over the wire.
+
+Message names are auto-completed:
+<img width="589" alt="Screen Shot 2021-03-10 at 3 26 19 PM" src="https://user-images.githubusercontent.com/12111/110712164-a0b1c280-81b5-11eb-8b71-1e277dadcb6d.png">
+
+So are parameter names:
+<img width="586" alt="Screen Shot 2021-03-10 at 3 26 38 PM" src="https://user-images.githubusercontent.com/12111/110712183-a9a29400-81b5-11eb-8979-300ff6f0bfc0.png">
+
+Invalid parameter types cause compilation errors:
+<img width="603" alt="Screen Shot 2021-03-10 at 3 26 53 PM" src="https://user-images.githubusercontent.com/12111/110712289-cfc83400-81b5-11eb-8a0e-968fca5c33cc.png">
+
+
+
+
+
+
+
+
+<img width="596" alt="Screen Shot 2021-03-10 at 3 25 23 PM" src="https://user-images.githubusercontent.com/12111/110711867-1a957c00-81b5-11eb-9a58-a65484a438c2.png">
