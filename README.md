@@ -111,10 +111,11 @@ Below are a few screenshots from VSCode highlighting the benefits how SolidRPC l
 <img width="734" alt="Screen Shot 2021-03-09 at 11 37 20 AM" src="https://user-images.githubusercontent.com/12111/110553137-64b32a80-80ed-11eb-8fa5-8ec3f1c14f4e.png">
 
 - If you try to implement an invalid method name, you get an error:
+<img width="694" alt="Screen Shot 2021-03-09 at 4 57 41 PM" src="https://user-images.githubusercontent.com/12111/110559165-95e52800-80f8-11eb-94a5-a0d39318d8a5.png">
 
-<img width="784" alt="Screen Shot 2021-03-09 at 11 32 40 AM" src="https://user-images.githubusercontent.com/12111/110553048-36354f80-80ed-11eb-9074-7363fb8842fb.png">
 
 - If you try to add an invalid parameter name, you get an error:
+<img width="852" alt="Screen Shot 2021-03-09 at 4 58 22 PM" src="https://user-images.githubusercontent.com/12111/110559214-b01f0600-80f8-11eb-9aba-db4f5191154b.png">
 <img width="696" alt="Screen Shot 2021-03-09 at 11 33 21 AM" src="https://user-images.githubusercontent.com/12111/110553289-a47a1200-80ed-11eb-81b4-c4bbce83f83c.png">
 
 
