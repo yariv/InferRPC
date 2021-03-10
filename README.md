@@ -54,6 +54,8 @@ export const testSchema = {
 
 This example only uses basic types (strings and numbers) but Zod lets you express more complex validation rules, such as whether a string contains a date, a URL, or an email address.
 
+== Server Example
+
 A complete Koa-based server for this schema can be implemented with the following code snippet:
 
 ```typescript
@@ -123,6 +125,7 @@ Below are a few screenshots from VSCode highlighting the benefits of how SolidRP
 <img width="826" alt="Screen Shot 2021-03-09 at 4 59 39 PM" src="https://user-images.githubusercontent.com/12111/110559332-dc3a8700-80f8-11eb-9e45-7062043ed920.png">
 
 
+== Client Example
 
 Implementing a client that adheres to the schema is easy. Here's an example:
 ```
