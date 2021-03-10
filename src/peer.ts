@@ -44,7 +44,7 @@ export class Peer<
     this.handlers = {} as any; // TODO figure out why this casting is necessary
   }
 
-  onMessage(msg: string) {
+  async onMessage(msg: string) {
     let msgJson;
     try {
       msgJson = JSON.parse(msg);
@@ -58,22 +58,19 @@ export class Peer<
       this.listener.onParseError(parseResult.error);
       return;
     }
-
     const { type, params } = parseResult.data;
+    const parseResult2 = this.incomingSchema[type].safeParse(params);
+    if (!parseResult2.success) {
+      this.listener.onParseError(parseResult2.error);
+      return;
+    }
+
     if (!(type in this.handlers)) {
       this.listener.onMissingHandler(type);
       return;
     }
 
-    const parseResult2 = this.incomingSchema[type].safeParse(params);
-    if (parseResult2.success) {
-      this.handlers[type](parseResult2.data).catch((err) => {
-        console.warn("Uncaught error in handler", err);
-      });
-    } else {
-      this.listener.onParseError(parseResult2.error);
-      return;
-    }
+    await this.handlers[type](parseResult2.data);
   }
 
   setHandler<MsgType extends keyof IncomingSchemaType>(
