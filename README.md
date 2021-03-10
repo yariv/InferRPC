@@ -128,7 +128,7 @@ Below are a few screenshots from VSCode highlighting the benefits of how StaticR
 ## Client Example
 
 Implementing a client that adheres to the schema is easy. Here's an example:
-```
+```typescript
 const testClient = async () => {
   const client = new TypedHttpClient("http://localhost:3001/api", testSchema);
   const result = await client.call("divide", { num1: 10, num2: 2 });
