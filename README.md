@@ -190,7 +190,7 @@ const schema2 = {
 
 To use InferRFC in a p2p application, create a Peer object. Its constructor takes 2 schemas: the schema for the incoming messages, the schema for the outgoing messages, and a listener for errors. Here's an example:
 
-```
+```typescript
 const listener: PeerListener = {
   onMissingHandler: (msgType) => {
     console.error("missing handler", msgType);
