@@ -8,7 +8,7 @@ StaticRPC is a TypeScript library that facilitates writing API clients and serve
 4. Easy integration into any backend framework. Currently, Koa and NextJS are supported.
 5. Can be extended to support arbitrary serialization protocols (although only JSON is supported right now).
 
-SolidRPC uses [Zod](https://github.com/colinhacks/zod) for describing request/response schemas and for validating payloads.
+SolidRPC uses [Zod](https://github.com/colinhacks/zod) for expressing request/response schemas and for validating payloads.
 
 # Usage
 
