@@ -4,7 +4,7 @@ InferRPC is a TypeScript library that facilitates writing API clients and server
 
 1. Compile-time type checking of both client and server code.
 2. Run-time validation of requests and responses to ensure they comply with the schema's basic types as well as extended validation rule (e.g. does this string represent a URL?)
-3. Zero code generation enabling lightweight clients.
+3. Zero code generation.
 4. Easy integration into any backend framework. Currently, Koa and NextJS are supported.
 5. Can be extended to support arbitrary serialization protocols (although only JSON is supported right now).
 
