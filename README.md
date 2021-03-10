@@ -110,7 +110,8 @@ Below are a few screenshots from VSCode highlighting the benefits of how StaticR
 
 - Your editor's auto-complete feature can help you choose a valid method name:
 
-<img width="734" alt="Screen Shot 2021-03-09 at 11 37 20 AM" src="https://user-images.githubusercontent.com/12111/110553137-64b32a80-80ed-11eb-8fa5-8ec3f1c14f4e.png">
+<img width="746" alt="Screen Shot 2021-03-10 at 9 33 39 AM" src="https://user-images.githubusercontent.com/12111/110671761-c02ff780-8183-11eb-8f60-b1e40098d3b2.png">
+
 
 - If you try to implement an invalid method name, you get an error:
 <img width="694" alt="Screen Shot 2021-03-09 at 4 57 41 PM" src="https://user-images.githubusercontent.com/12111/110559165-95e52800-80f8-11eb-94a5-a0d39318d8a5.png">
