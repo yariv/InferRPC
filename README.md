@@ -1,6 +1,6 @@
-# SolidRPC Introduction
+# StaticRPC Introduction
 
-SolidRPC is a TypeScript library that facilitates writing API clients and servers that communicate by a protocol described by a shared schema. SolidRPC provides the following benefits:
+StaticRPC is a TypeScript library that facilitates writing API clients and servers that communicate by a protocol described by a shared schema. StaticRPC provides the following benefits:
 
 1. Compile-time type checking of both client and server code.
 2. Run-time validation of requests and responses to ensure they comply with the schema's basic types as well as extended validation rule (e.g. does this string represent a URL?)
@@ -12,9 +12,9 @@ SolidRPC uses [Zod](https://github.com/colinhacks/zod) for describing request/re
 
 # Usage
 
-To implement an API client and/or server using SolidRPC, you typically start by implementing a static data structure describing the schema. SolidRPC uses type inference to infer the request/response types from this data structured.
+To implement an API client and/or server using StaticRPC, you typically start by implementing a static data structure describing the schema. StaticRPC uses type inference to infer the request/response types from this data structured.
 
-SolidRPC schemas are TypeScript dictionaries mapping method names to request and response schema.
+StaticRPC schemas are TypeScript dictionaries mapping method names to request and response schema.
 
 In TypeScript, a schema is a data structure that adheres to the following type signature:
 
@@ -62,8 +62,8 @@ A complete Koa-based server for this schema can be implemented with the followin
 import Koa from "koa";
 import Router from "koa-router";
 import { Server } from "net";
-import { createKoaRoute } from "solidRpc/koaAdapter"
-import { ApiHttpError } from "solidRpc/types"
+import { createKoaRoute } from "staticRpc/koaAdapter"
+import { ApiHttpError } from "staticRpc/types"
 import { testSchema } from "./testSchema"
 
 const createServer = (port: number): Server => {
@@ -91,7 +91,7 @@ const createServer = (port: number): Server => {
 
 NextJS is also supported. This snipped shows to implement a NextJS API handler:
 ```typescript
-import { createNextHandler } from "solidRpc/nextAdapter"
+import { createNextHandler } from "staticRpc/nextAdapter"
 
 export default createNextHandler(
       testSchema,
@@ -106,7 +106,7 @@ export default createNextHandler(
   });
 ```
 
-Below are a few screenshots from VSCode highlighting the benefits of how SolidRPC leverages TypeScript's type checking.
+Below are a few screenshots from VSCode highlighting the benefits of how StaticRPC leverages TypeScript's type checking.
 
 - Your editor's auto-complete feature can help you choose a valid method name:
 
@@ -136,7 +136,7 @@ const testClient = async () => {
 };
 ```
 
-The following screenshots show the benefits of SolidRPC's static type checking.
+The following screenshots show the benefits of StaticRPC's static type checking.
 
 - Your editor can help you auto-complete the valid method names:
 <img width="710" alt="Screen Shot 2021-03-09 at 3 43 25 PM" src="https://user-images.githubusercontent.com/12111/110553720-4568cd00-80ee-11eb-9556-3f3ec78d9cdf.png">
