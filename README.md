@@ -249,10 +249,3 @@ Invalid parameter types cause compilation errors:
 <img width="603" alt="Screen Shot 2021-03-10 at 3 26 53 PM" src="https://user-images.githubusercontent.com/12111/110712289-cfc83400-81b5-11eb-8a0e-968fca5c33cc.png">
 
 
-
-
-
-
-
-
-<img width="596" alt="Screen Shot 2021-03-10 at 3 25 23 PM" src="https://user-images.githubusercontent.com/12111/110711867-1a957c00-81b5-11eb-9a58-a65484a438c2.png">
