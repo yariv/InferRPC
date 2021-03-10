@@ -215,6 +215,12 @@ peer1.setHandler("divide", async ({ num1, num2 }) => {
 peer1.setHandler("sayHi", async ({ name }) => {
   peer2.onMessage(peer1.serialize("sayHiResult", "Hi " + name));
 });
+peer2.setHandler("divideResult", async (num) => {
+  console.log(num); // prints '2'
+});
+peer2.setHandler("sayHiResult", async (result) => {
+  console.log(result); // prints "Hi Sarah";
+});
 
 peer1.onMessage(peer2.serialize("divide", { num1: 10, num2: 5 }));
 peer1.onMessage(peer2.serialize("sayHi", { name: "Sarah" }));
