@@ -1,5 +1,5 @@
 {
-  "name": "solid-rpc",
+  "name": "infer-rpc",
   "version": "1.0.0",
   "license": "MIT",
   "description": "A library for statically typed and validated RPC clients and servers",
@@ -9,13 +9,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yariv/SolidRPC"
+    "url": "git+https://github.com/yariv/InferRPC"
   },
   "keywords": [
     "Typescript",
     "RPC"
   ],
-  "homepage": "https://github.com/yariv/SolidRPC",
+  "homepage": "https://github.com/yariv/InferRPC",
   "dependencies": {
     "koa": "^2.13.1",
     "koa-bodyparser": "^4.3.0",
@@ -40,5 +40,8 @@
     "dist/**/*"
   ],
   "types": "dist/index.d.ts",
-  "author": "Yariv Sadan"
+  "author": "Yariv Sadan",
+  "publishConfig": {
+    "access": "public"
+  }
 }

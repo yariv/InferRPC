@@ -1,6 +1,6 @@
 import * as z from "zod";
 
-// The basic SolidRPC schema type.
+// The basic schema type.
 export type AbstractApiSchemaType = Record<
   string,
   { req: z.ZodType<any>; res: z.ZodType<any> }
