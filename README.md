@@ -96,7 +96,7 @@ you that you've implemented all the required methods.
 
 Here's an example snippet based on the code snippet above:
 
-```
+```typescript
 import { createKoaRoutes } from "infer-rpc/koaAdapter";
 import type { InferInterace } from "infer-rpc/types";
 
@@ -148,7 +148,7 @@ Below are a few screenshots from VSCode highlighting the benefits of how InferRP
   <img width="852" alt="Screen Shot 2021-03-09 at 4 58 22 PM" src="https://user-images.githubusercontent.com/12111/110559214-b01f0600-80f8-11eb-9aba-db4f5191154b.png">
 
 - If your method returns an invalid response type, you get an error:
-<img width="826" alt="Screen Shot 2021-03-09 at 4 59 39 PM" src="https://user-images.githubusercontent.com/12111/110559332-dc3a8700-80f8-11eb-9e45-7062043ed920.png">
+  <img width="826" alt="Screen Shot 2021-03-09 at 4 59 39 PM" src="https://user-images.githubusercontent.com/12111/110559332-dc3a8700-80f8-11eb-9e45-7062043ed920.png">
 
 ## Client Example
 
