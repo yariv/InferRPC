@@ -62,8 +62,8 @@ A complete Koa-based server for this schema can be implemented with the followin
 import Koa from "koa";
 import Router from "koa-router";
 import { Server } from "net";
-import { createKoaRoute } from "InferRPC/koaAdapter";
-import { ApiHttpError } from "InferRPC/types";
+import { createKoaRoute } from "infer-rpc/koaAdapter";
+import { ApiHttpError } from "infer-rpc/types";
 import { testSchema } from "./testSchema";
 
 const createServer = (port: number): Server => {
@@ -87,6 +87,34 @@ const createServer = (port: number): Server => {
   koa.use(apiRouter.routes());
   return koa.listen(port);
 };
+```
+
+InferRPC provides an alternative way to implement the server by inferring the
+interface derived from the schema. When you create a server that implements
+the inferred interface, the TypeScript compiler automatically checks for
+you that you've implemented all the required methods.
+
+Here's an example snippet based on the code snippet above:
+
+```
+import { createKoaRoutes } from "infer-rpc/koaAdapter";
+import type { InferInterace } from "infer-rpc/types";
+
+...
+
+const server: InferInterface<typeof testSchema> = {
+  sayHi({ name }) {
+    return "Hi " + name;
+  },
+
+  divide({ num1, num2 }) {
+    if (num2 === 0) {
+      throw new ApiHttpError("Can't divide by 0", 400);
+    }
+    return num1 / num2;
+  },
+};
+createKoaRoutes(apiRouter, testSchema, server);
 ```
 
 NextJS is also supported. This snippet shows to implement a NextJS API handler:
@@ -120,7 +148,6 @@ Below are a few screenshots from VSCode highlighting the benefits of how InferRP
   <img width="852" alt="Screen Shot 2021-03-09 at 4 58 22 PM" src="https://user-images.githubusercontent.com/12111/110559214-b01f0600-80f8-11eb-9aba-db4f5191154b.png">
 
 - If your method returns an invalid response type, you get an error:
-
 <img width="826" alt="Screen Shot 2021-03-09 at 4 59 39 PM" src="https://user-images.githubusercontent.com/12111/110559332-dc3a8700-80f8-11eb-9e45-7062043ed920.png">
 
 ## Client Example
