@@ -1,7 +1,11 @@
 import bodyParser from "koa-bodyparser";
 import Router from "koa-router";
 import { getUntypedServerFunc } from "./baseApi";
-import { AbstractApiSchemaType, TypedServerFunc } from "./types";
+import {
+  AbstractApiSchemaType,
+  InferInterface,
+  TypedServerFunc,
+} from "./types";
 import { Request } from "koa";
 import { createHttpHandler } from "./httpServer";
 
@@ -24,4 +28,16 @@ export const createKoaRoute = <
     ctx.status = resp.status;
     ctx.body = resp.status === 200 ? JSON.stringify(resp.body) : resp.body;
   });
+};
+
+// Add all of the methods from the object that implements the
+// inferred interface to the Koa router.
+export const createKoaRoutes = <SchemaType extends AbstractApiSchemaType>(
+  router: Router,
+  schema: SchemaType,
+  impl: InferInterface<SchemaType>
+) => {
+  for (const methodName of Object.keys(impl)) {
+    createKoaRoute(router, schema, methodName, impl[methodName]);
+  }
 };

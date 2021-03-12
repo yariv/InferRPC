@@ -53,3 +53,9 @@ export type UntypedServerFunc<
   reqBody: any,
   req: ReqType
 ) => Promise<ResSchema<ApiSchemaType, MethodType>>;
+
+export type InferInterface<Schema extends AbstractApiSchemaType> = {
+  [methodName in keyof Schema]: (
+    req: ReqSchema<Schema, methodName>
+  ) => ResSchema<Schema, methodName>;
+};

@@ -1,6 +1,6 @@
 {
   "name": "infer-rpc",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "license": "MIT",
   "description": "A library for statically typed and validated RPC clients and servers",
   "scripts": {
@@ -39,7 +39,6 @@
   "files": [
     "dist/**/*"
   ],
-  "types": "dist/index.d.ts",
   "author": "Yariv Sadan",
   "publishConfig": {
     "access": "public"
